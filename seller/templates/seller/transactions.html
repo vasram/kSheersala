@@ -1,0 +1,36 @@
+{% extends "seller/base.html" %}
+{% block title %}| Transaction{% endblock %}
+{% block content %}
+
+<h1> {{transactions_record.username}} </h1>
+
+{% if transactions_record  %}
+
+
+<table  style="width:100%" >
+
+    <tr>
+    <th>Date / Time</th>
+    <th>Quantity</th>
+     <th> Quality</th>
+     <th>Cattle </th>
+      <th>Payment Rs</th>
+        <th>Transaction Id</th>
+  </tr>
+{% for field in transactions_record %}
+<tr>
+    <td> {{ field.transaction_date }}</td>
+    <td> {{ field.quantity  }} </td>
+    <td>  {{ field.quality}}</td>
+    <td> {{ field.cattle }}</td>
+    <td> {{ field.payment}}</td>
+    <td>  {{field.transaction_id}}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% else %}
+ <strong> NO RECORD </strong>
+
+{% endif %}
+{%endblock %}

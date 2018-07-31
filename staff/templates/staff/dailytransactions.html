@@ -1,0 +1,67 @@
+{% extends "staff/base.html" %}
+{% block title %}| Daily Transaction {% endblock %}
+{% block style %}
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<h1> Daily Transactions </h1>
+
+
+<form action="" method="post" id="transactions-form">
+     {% csrf_token %}
+    <table  style="width:100%" >
+
+              <tr>
+                  <td>Username</td>
+                  <td>  {{transactions_form.username}}</td>
+              </tr>
+              <tr>
+                  <td>quantity </td>
+                    <td>  {{transactions_form.quantity}}</td>
+              </tr>
+              <tr>
+                 <td>Fat</td>
+                 <td>  {{transactions_form.Fat}}</td>
+              </tr>
+
+              <tr>
+                  <td>SNF</td>
+                  <td>  {{transactions_form.SNF}}</td>
+              </tr>
+
+
+              <tr>
+                  <td>Cattle</td>
+                  <td>  {{transactions_form.cattle}}</td>
+              </tr>
+
+
+             <!-- <tr>
+                  <td>Payment (Rs)</td>
+                  <td>  {{transactions_form.payment}}</td>
+              </tr> -->
+              <tr>
+                  <td> Transactions Date</td>
+                  <td>  {{transactions_form.transaction_date}}</td>
+              </tr>
+
+</table>
+
+    <button type="Submit ">Save</button>
+</form>
+
+
+<p style="color:darkred"> {{ message }}</p><br>
+
+
+  <div style="background-color: #dddddd; "  >
+
+                               <ul   style="list-style: none;"  >
+                                      <li><a href="/staff/alltransactionshistory/"> All Transactions</a> </li>
+                                </ul>
+</div>
+{%endblock %}

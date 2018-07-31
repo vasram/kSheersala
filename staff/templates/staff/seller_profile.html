@@ -1,0 +1,102 @@
+{% extends "staff/base.html" %}
+{% block title %}| Seller profile{% endblock %}
+{% block content %}
+<h4 style="color: green" > personal detail  </h4>
+
+<table  style="width:80%" >
+
+    <tr>
+        <th>Username</th>
+        <td>{{user_record1.username}}</td>
+    </tr>
+    <tr>
+    <th>Name</th>
+     <td> {{user_record1.first_name  }} {{user_record1.last_name }} </td>
+    </tr>
+
+
+    <tr>
+      <th>Mobile No </th> <td> {{user_record1.mobile_number }}</td>
+  </tr>
+    <tr>
+      <th>Address</th> <td> {{user_record1.address }}</td>
+  </tr>
+    <tr>
+     <th>Date Of Birth </th> <td>  {{user_record1.dob}}</td>
+    </tr>
+<tr>
+     <th>email </th>  <td> {{user_record1.email }}</td>
+</tr>
+
+
+</table>
+
+<button type="button" class="btn btn-success"
+        onclick="delete_seller_record('{{user_record1.username}}')">
+    Delete
+</button>
+
+<!-- <button type="button" class="btn btn-success"
+                                      onclick="update_seller_record('{{user_record1.username}}')">
+                                  Update
+                   </button>
+<ul>
+   <li><a href="/staff/update_seller_record/" >update</a> </li>
+</ul>
+-->
+
+{% endblock %}
+
+{% block script %}
+
+    function delete_seller_record(username)
+      {
+
+          $.ajax({
+
+              type    : "GET",
+              url     : "/staff/delete_seller_record/",
+              data    : {'username' : username},
+
+              success : function(data)
+                        {
+
+                          data = JSON.parse(data);
+                          if(data['mesg'] == "Success!")
+                           {
+                              alert(' Successfully deleted ' + username  + ' account');
+                              window.location='/staff/getseller/';
+                           }
+                        }
+
+          });
+
+    }
+
+
+
+function update_seller_record(username)
+      {
+
+          $.ajax({
+
+              type    : "GET",
+              url     : "/staff/update_seller_record/",
+              data    : {'username' : username},
+
+              success : function(data)
+                        {
+
+                          data = JSON.parse(data);
+                          if(data['mesg'] == "Success!")
+                           {
+                              alert(' Successfully update ' + username  + ' account');
+                              window.location='/staff/getseller/';
+                           }
+                        }
+
+          });
+
+    }
+
+{% endblock %}

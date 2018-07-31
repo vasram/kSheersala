@@ -1,0 +1,32 @@
+{% extends "staff/base.html" %}
+{% block title %}| Edit profile{% endblock %}
+{% block content %}
+
+<h1>Edit Profile</h1>
+
+
+<form action="" method="post" id="profile_edit-form">
+
+ {% csrf_token %}
+<table  style="width:100%" >
+         {% for field in form %}
+            <tr>
+            </tr>
+            <tr>
+
+                    {% if field.name == 'mobile_number' %}
+                          <td>{{field.name.upper}}</td>
+                           <td> <input type="text"  name="mobile_number" maxlength="10"   required/>     </td>
+                     {% elif field.name == 'dob' %}
+                       <td> {{field.name.upper}}  (YYYY-MM-DD) </td>
+                        <td>  {{field}}</td>
+                    {% else %}
+                       <td>{{field.name.upper}}</td>
+                       <td>  {{field}}</td>
+                   {% endif %}
+       {% endfor %}
+            </tr>
+</table>
+ <button type="submit">Save</button>
+</form>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "staff/base.html" %}
+{% block title %}|  profile{% endblock %}
+{% block content %}
+<h4 style="color: green" > Personal Detail  </h4>
+
+<table  style="width:80%" >
+
+    <tr>
+    <th>Name</th>
+     <td> {{user_record.first_name  }} {{user_record.last_name }} </td>
+    </tr>
+
+    </tr>
+    <tr>
+      <th>Mobile No </th> <td> {{user_record.mobile_number }}</td>
+  </tr>
+    <tr>
+      <th>Address</th> <td> {{user_record.address }}</td>
+  </tr>
+    <tr>
+     <th>Date Of Birth </th> <td>  {{user_record.dob}}</td>
+    </tr>
+<tr>
+     <th>email </th>  <td> {{user_record.email }}</td>
+
+
+
+</table>
+<div  id =update>
+                              <ul   style="list-style: none;"   >
+                                    <li><a href="/staff/profile_edit/"> UpDate</a> </li>
+
+                                </ul>
+
+</div>
+
+{%endblock %}

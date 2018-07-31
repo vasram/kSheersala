@@ -1,0 +1,39 @@
+{% extends "staff/base.html" %}
+{% block title %}|Transaction{% endblock %}
+{% block content %}
+
+
+
+{% if transactions_record  %}
+
+
+<table  style="width:100%" >
+
+    <tr>
+    <th>Username</th>
+    <th>Date / Time</th>
+    <th>Quantity</th>
+     <th> Fat</th>
+      <th> SNF</th>
+     <th>Cattle </th>
+      <th>Payment Rs</th>
+        <th> Transaction Id </th>
+  </tr>
+{% for field in transactions_record %}
+<tr> <td>{{ field.username}}</td>
+    <td> {{ field.transaction_date }}</td>
+    <td> {{ field.quantity  }} </td>
+    <td>  {{ field.Fat}}</td>
+    <td>  {{ field.SNF}}</td>
+    <td> {{ field.cattle }}</td>
+    <td> {{ field.payment}}</td>
+    <td>{{field.transaction_id}}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% else %}
+ <strong> NO RECORD </strong>
+
+{% endif %}
+{%endblock %}

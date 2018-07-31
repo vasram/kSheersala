@@ -1,0 +1,268 @@
+
+  <!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width" />
+   <title> Staff {% block title %} {% endblock %} </title>
+  <!-- <link rel="stylesheet" href="/static/homepage/css/style.css"> -->
+   <style>
+
+
+
+
+/* */
+*  {padding:0; margin: 0;  }
+  #wrapper{ }
+  #header{background-color:#99ccff;
+         height:75px ;
+         -moz-border-radius:5px;
+         webkit-border-radius:5px;
+         border-radius: 5px;
+         margin-top: 2px;
+         box-shadow: 0px 2px 4px gray;
+          }
+  #header-navbar{ width: auto;px;height:75px; float: right;}
+  #header-navbar>li{width: 150px;list-style: none;float: right;}
+  li>a{display: block;
+       color: white;
+       line-height: 75px;
+       text-align: center;
+       font-family: cursive;
+       font: 20px;
+       text-decoration: none;}
+  li>a:hover{background:skyblue ;color: #333;box-shadow: 2px 2px 2px 2px  gray; border-radius: 15px;}
+
+
+#title{  width: 220px;
+         height: 75px;
+         float: left;
+         color: white;
+         line-height: 75px;
+         font-family:  Georgia, serif; ;
+         text-align:center;
+        }
+
+
+ #staff_profile{
+ width: 120px;
+ height: 75px;
+float: right;
+ color: white;
+ line-height: 75px;
+ font-family: cursive;
+
+ text-align:center;
+ }
+
+#content{margin-top: 5px;height: 500px;}
+
+#content::after{content:""; display:block;clear: both;}
+#left-panel{
+  text-align: center;
+  float: left;
+  width: 19%;
+  height: auto;
+  margin-left:5px;
+
+
+    }
+#navbar {
+     background-color:#99ccff;
+     width: 100%;
+     height: 100%;
+     -moz-border-radius:5px;
+     -webkit-border-radius:5px;
+     border-radius: 5px;
+     box-shadow: 0px 2px 4px gray;
+}
+
+
+ /* #news {
+     background-color:#99ccff ;
+     width: 100%;
+     height: 35%;
+     -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius: 5px;
+    margin-top: 5px;
+    box-shadow: 0px 2px 4px gray;
+}*/
+
+#right-panel{
+  float: right;
+  width: 80%;
+  height: 100%;
+  margin-right:5px;
+  margin-left:1px;
+  text-color:red;
+ ;
+  text-align:center;
+  -moz-border-radius:5px;
+ -webkit-border-radius:5px;
+ border-radius: 5px;
+
+    }
+
+#footer{
+      margin-top:5px;
+      background-color:#99ccff;
+      height:85px ;
+       -moz-border-radius:5px;
+      -webkit-border-radius:15px;
+      border-radius: 15px;
+      -moz-border-radius:5px;
+     -webkit-border-radius:15px;
+
+     box-shadow: 0px 2px 4px gray;
+    }
+
+
+
+
+.dropdown {
+    float: left;
+    overflow: hidden
+}
+
+.dropdown  {
+  line-height: 75px;
+  width: 100%;
+  text-align: center;
+  font-family: cursive;
+  text-decoration: none;
+}
+
+ .dropdown:hover .dropbtn {background:skyblue ;color: #333;}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    }
+
+.dropdown-content a {
+    width: 100%;
+    float: none;
+    color: white;
+    padding: 0.1px 36px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.dropdown-content a:hover {background-color: skyblue;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#update{
+ width: 100px;
+ height: 75px;
+ float:right;
+ background-color:skyblue;
+ line-height: 75px;
+ -moz-border-radius:15px;
+         webkit-border-radius:15px;
+         border-radius: 15px;
+         margin-top: 2px;
+         box-shadow: 0px 2px 4px gray;
+ }
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+       {% block style %} {% endblock %}
+
+   </style>
+ </head>
+<body>
+   <div id="wrapper">
+      <div id="header">
+
+        <ul id="header-navbar">
+                         <li><a href="/staff/logout/"> LogOut</a> </li>
+
+
+                         <li><a href="/home/">  Home </a></li>
+                         <li class="active"><a href="/staff/profile/">  <h3 class="pro-name">{{user_record.first_name}} </h3></a> </li>
+
+        </ul>
+
+                  <div id ="title" >
+                   <h1 class="pro-name">kSheersala</h1>
+                 </div>
+
+
+
+      </div> <!-- header -->
+      <div id="content">
+
+           <div id="left-panel">
+                   <div id="navbar">
+
+                                 <ul>
+                                      <!-- <li><a href="#" > Seller Bill</a> </li> -->
+
+                                       <li><a href="/staff/dailytransactions/" >Transactions</a> </li>
+                                     <li><a href="/staff/review/" >Manage feedback</a> </li>
+                                      <li><a href="/staff/getseller/">Manage Seller Account</a></li>
+                                     <li><a href="/staff/milk_price/">View Milk price</a></li>
+                                    <!-- <div class="dropdown">
+                                         <li><a href="#">Manage Seller Account</a></li>
+                                         <div class="dropdown-content">
+                                                            <a href="/staff/getseller/">Add New  </a>
+                                                        <a href="/seller/login">Delete</a>
+                                                      <a href="/staff/update_seller_record">Update</a>
+                                         </div>
+                          </div> -->
+
+
+                                </ul>
+                   </div>
+           </div>
+             <div id = "right-panel" >
+
+                {% block content %}
+
+                {% endblock %}
+          </div> <!-- right-panel -->
+      </div> <!-- cont -->
+   <!--   <div id =footer > <strong></strong> </div> <!-- footer -->
+  </div> <!-- wrapper -->
+
+</body>
+
+
+
+
+
+
+   <script>
+            {% block script %}
+    {% endblock %}
+            new WOW().init();
+        </script>
+
+        <script src="/static/staff/js/jquery-2.1.3.min.js"></script>
+        <script src="/static/staff/js/bootstrap.min.js"></script>
+        <script src="/static/staff/js/jquery.actual.min.js"></script>
+        <script src="/static/staff/js/isotope.pkgd.min.js"></script>
+        <script src="/static/staff/js/owl.carousel.min.js"></script>
+        <script src="/static/staff/js/jquery.isonscreen.js"></script>
+
+        <script src="/static/seller/js/main.js"></script>
+</html>

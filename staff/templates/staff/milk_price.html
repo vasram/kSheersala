@@ -1,0 +1,42 @@
+{% extends "staff/base.html" %}
+{% block title %}| Milk_price {% endblock %}
+
+
+
+
+
+{% block content %}
+
+
+
+<table  style="width:100%" >
+
+    <tr>
+    <th>Fat</th>
+    <th>SNF</th>
+    <th>Update Date</th>
+
+  </tr>
+{% for field in milk_record %}
+<tr> <td>{{field.Kg_Fat_Rate}}</td>
+    <td> {{  field.Kg_SNF_Rate }}</td>
+    <td> {{ field.up_date  }} </td>
+
+</tr>
+{% endfor %}
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{%endblock %}

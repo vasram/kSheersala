@@ -1,0 +1,40 @@
+{% extends "staff/base.html" %}
+{% block title %}| Reviews{% endblock %}
+{% block content %}
+<h4 style="color: green" > Raviews  </h4>
+<br> <br>
+
+
+
+
+{% if  review_record %}
+
+
+<table  style="width:100%" >
+
+    <tr>
+    <th>Username</th>
+    <th>Rating</th>
+     <th>Comment</th>
+     <th>Date </th>
+
+  </tr>
+{% for field in review_record %}
+<tr>
+    <td> {{ field.username }}</td>
+    <td> {{ field.rating  }} </td>
+    <td>  {{ field.comment}}</td>
+    <td> {{ field.date }}</td>
+
+</tr>
+{% endfor %}
+</table>
+
+{% else %}
+ <strong> NO RECORD </strong>
+
+{% endif %}
+
+
+
+{% endblock %}

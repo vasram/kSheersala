@@ -1,0 +1,41 @@
+{% extends "seller/base.html" %}
+{% block title %}| Rewies {% endblock %}
+{% block content %}
+
+<div >
+
+
+<form action="" method="post" id="review-form">
+    <input type='hidden' name='csrfmiddlewaretoken' value='lUOPaAukDoaaHSVNRSIvlkFpQzo6KFeXkILuxN7kjK7ymnP3CM2dIYO7N42sPN8H' />
+
+    {% csrf_token %}
+
+
+
+    <table  style="width:100%" >
+    {% for field in review_form %}
+       <tr>
+       </tr>
+        <tr>
+       <td>{{field.name.upper}}</td>
+            <td>  {{field}}</td>
+
+    {% endfor %}
+
+
+
+</tr>
+</table>
+
+
+
+
+
+    <label>&nbsp;</label><input type="submit" value="Submit" />
+
+</form>
+
+<br>
+<p style="color:darkred"> {{ message }}</p><br>
+</div>
+{%endblock %}

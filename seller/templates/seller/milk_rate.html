@@ -1,0 +1,56 @@
+{% extends "seller/base.html" %}
+{% block title %}| View Price {% endblock %}
+{% block style %}
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<h1> View Milk Price </h1>
+<br> <br>
+
+<strong> Enter Quantity , Fat, SNF </strong>
+  <br>
+  <br>
+
+<form action="" method="post" id="transactions-form">
+     {% csrf_token %}
+    <table  style="width:100%" >
+
+
+              <tr>
+                  <td>quantity </td>
+                    <td>  {{transactions_form.quantity}}</td>
+              </tr>
+              <tr>
+                 <td>Fat</td>
+                 <td>  {{transactions_form.Fat}}</td>
+              </tr>
+
+              <tr>
+                  <td>SNF</td>
+                  <td>  {{transactions_form.SNF}}</td>
+              </tr>
+
+
+
+
+             <!-- <tr>
+                  <td>Payment (Rs)</td>
+                  <td>  {{transactions_form.payment}}</td>
+              </tr> -->
+
+
+</table>
+
+    <button type="Submit ">Save</button>
+</form>
+
+<br> <br>
+
+<p style="color:darkred"> Price Rs : <strong>{{ payment}} </strong> </p>
+
+
+{%endblock %}

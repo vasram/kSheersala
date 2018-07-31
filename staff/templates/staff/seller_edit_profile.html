@@ -1,0 +1,15 @@
+{% extends "staff/base.html" %}
+{% block title %}| Edit profile{% endblock %}
+{% block content %}
+
+<h1>Edit Profile</h1>
+
+
+<form action="" method="GET" id="profile_edit-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+
+{% endblock %}
