@@ -1,5 +1,5 @@
 # kSheersala
-A Task kSheersala is a Web-Based Dairy Management System developed using Python and Django 
+ kSheersala is a Web-Based Dairy Management System developed using Python and Django 
 
 The existing dairy management system is solely dependent upon
 manually extracting and inputting records. The problem with this
